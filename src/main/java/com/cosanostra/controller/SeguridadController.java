@@ -65,7 +65,8 @@ public class SeguridadController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Long id) {
+    // --- CORRECCIÓN AQUÍ: Cambiado Long a Integer ---
+    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
         try {
             seguridadService.delate(id);
             return ResponseEntity.noContent().build();

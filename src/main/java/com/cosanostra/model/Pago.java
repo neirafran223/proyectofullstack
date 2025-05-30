@@ -1,6 +1,6 @@
 package com.cosanostra.model;
 
-import java.math.BigDecimal;
+import java.math.BigDecimal; // Importar BigDecimal
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -10,7 +10,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToOne; // Necesario para las relaciones
+import jakarta.persistence.JoinColumn; // Necesario para definir las columnas de unión
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,7 +29,7 @@ public class Pago {
     private Long id;
 
     @Column(nullable = false)
-    private BigDecimal monto;
+    private BigDecimal monto; // Usar BigDecimal para el dinero
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -43,12 +44,21 @@ public class Pago {
     @Column
     private String transaccionId;
 
-    public enum EstadoPago {
-        PENDIENTE, COMPLETADO, FALLIDO, REEMBOLSADO
-    }
+    // --- RELACIONES CON USUARIO, EVENTO Y SEGURIDAD ---
+
     @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false) // Columna FK en la tabla 'pagos'
     private Usuario usuario;
 
     @ManyToOne
+    @JoinColumn(name = "evento_id", nullable = false) // Columna FK en la tabla 'pagos'
     private Evento evento;
+
+    @ManyToOne
+    @JoinColumn(name = "seguridad_id", nullable = false) // Columna FK en la tabla 'pagos'
+    private Seguridad seguridad;
+
+    public enum EstadoPago {
+        PENDIENTE, COMPLETADO, FALLIDO, REEMBOLSADO
+    }
 }

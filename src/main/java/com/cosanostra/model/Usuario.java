@@ -12,12 +12,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Usuario {
 
-    @Id // La clave primaria es 'id'
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Generada automáticamente por la base de datos
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; // ID técnico autoincremental
 
-    @Column(unique = true, nullable = false) // 'rut' es una columna única y no nula
-    private String rut;
+    @Column(unique = true, nullable = false)
+    private String rut; // Identificador natural, único
 
     @Column(nullable = false)
     private String nombre;
@@ -29,7 +29,7 @@ public class Usuario {
     private int edad;
 
     @Column
-    private String cargo; // Solo si trabaja en la empresa
+    private String cargo;
 
     @Column(nullable = false, unique = true)
     private String correo;
@@ -43,9 +43,17 @@ public class Usuario {
     @Column(nullable = false)
     private boolean esEmpleado;
 
-    @ManyToOne
+    // Relaciones: Debemos tener cuidado con las relaciones bidireccionales.
+    // Si Usuario tiene Evento y Seguridad, ¿es ManyToOne o OneToMany?
+    // Asumo ManyToOne aquí, lo que significa que un usuario puede estar asociado a UN evento y UNA seguridad.
+    // Si un evento puede tener muchos usuarios, la relación OneToMany iría en Evento.
+    // Dado tu modelo actual, lo dejo como ManyToOne aquí.
+
+    @ManyToOne(fetch = FetchType.LAZY) // Lazy loading para evitar ciclos infinitos
+    @JoinColumn(name = "evento_id") // Columna FK en la tabla 'usuarios'
     private Evento evento;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) // Lazy loading
+    @JoinColumn(name = "seguridad_id") // Columna FK en la tabla 'usuarios'
     private Seguridad seguridad;
 }

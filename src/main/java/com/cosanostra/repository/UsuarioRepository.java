@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, String> {
-    Optional<Usuario> findByRut(String rut);
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> { // <-- ¡Cambio aquí: de String a Long!
+    Optional<Usuario> findByRut(String rut); // Este método sigue siendo útil para buscar por RUT
 
     Optional<Usuario> findByCorreo(String correo);
 

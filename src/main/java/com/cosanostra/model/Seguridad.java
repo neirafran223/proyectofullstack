@@ -14,7 +14,7 @@ public class Seguridad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id; // ID de tipo Integer
 
     @Column(unique = false)
     private String nombreEmpresa;

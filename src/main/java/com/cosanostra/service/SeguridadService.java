@@ -20,7 +20,8 @@ public class SeguridadService {
         return seguridadRepository.findAll();
     }
 
-    public Seguridad findById(long id) {
+    // Cambiado 'long id' a 'Integer id'
+    public Seguridad findById(Integer id) {
         return seguridadRepository.findById(id).get();
     }
 
@@ -28,7 +29,8 @@ public class SeguridadService {
         return seguridadRepository.save(seguridad);
     }
 
-    public void delate(long id) {
+    // Cambiado 'long id' a 'Integer id'
+    public void delate(Integer id) {
         seguridadRepository.deleteById(id);
     }
 }

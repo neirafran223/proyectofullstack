@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import com.cosanostra.model.Evento;
 
 @Repository
-public interface EventoRepository extends JpaRepository<Evento, Long> {
+public interface EventoRepository extends JpaRepository<Evento, Integer> { // <-- ¡Cambio aquí: de Long a Integer!
 }

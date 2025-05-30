@@ -37,7 +37,7 @@ public class PagoController {
     }
 
     @GetMapping("/usuario/{usuarioId}")
-    public List<RespuestaPagoDto> obtenerPagosPorUsuario(@PathVariable String usuarioId) {
+    public List<RespuestaPagoDto> obtenerPagosPorUsuario(@PathVariable Long usuarioId) { // Corregido a Long
         return servicioPago.obtenerPagosPorUsuario(usuarioId);
     }
 
