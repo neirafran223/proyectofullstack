@@ -1,0 +1,110 @@
+{
+    "rut": "9876543-2",
+    "nombre": "María",
+    "apellido": "González",
+    "edad": 28,
+    "cargo": null,
+    "correo": "maria.gonzalez@empresa.com",
+    "contrasena": "securePass456",
+    "empresa": "Cosanostra",
+    "esEmpleado": true
+}
+{
+    "rut": "11222333-4",
+    "nombre": "Carlos",
+    "apellido": "Martínez",
+    "edad": 42,
+    "cargo": null,
+    "correo": "carlos.martinez@cliente.com",
+    "contrasena": "clientePass789",
+    "empresa": "EmpresaExterna S.A.",
+    "esEmpleado": false
+}
+{
+    "rut": "55667788-9",
+    "nombre": "Ana",
+    "apellido": "Rodríguez",
+    "edad": 35,
+    "cargo": "Gerente de Desarrollo",
+    "correo": "ana.rodriguez@cosanostra.com",
+    "contrasena": "managerPass!123",
+    "empresa": "Cosanostra",
+    "esEmpleado": true
+}
+{
+    "rut": "33444555-6",
+    "nombre": "Luis",
+    "apellido": "Sánchez",
+    "edad": 22,
+    "cargo": "Practicante TI",
+    "correo": "luis.sanchez@cosanostra.com",
+    "contrasena": "practicante2023",
+    "empresa": "Cosanostra",
+    "esEmpleado": true
+}
+{
+    "rut": "77888999-0",
+    "nombre": "Corporación",
+    "apellido": "ABC Limitada",
+    "edad": 0,
+    "cargo": null,
+    "correo": "contacto@corporacionabc.com",
+    "contrasena": "corpAccess2023",
+    "empresa": "Corporación ABC",
+    "esEmpleado": false
+}
+{
+    "rut": "99000111-2",
+    "nombre": "Fernanda",
+    "apellido": "Vargas",
+    "edad": 31,
+    "cargo": "Ejecutiva Comercial",
+    "correo": "fernanda.vargas@cosanostra.com",
+    "contrasena": "ventas2023!",
+    "empresa": "Cosanostra",
+    "esEmpleado": true
+}
+{
+    "rut": "22333444-5",
+    "nombre": "Roberto",
+    "apellido": "Mendoza",
+    "edad": 45,
+    "cargo": "Jefe Administrativo",
+    "correo": "roberto.mendoza@cosanostra.com",
+    "contrasena": "adminRoberto456",
+    "empresa": "Cosanostra",
+    "esEmpleado": true
+}
+{
+    "rut": "44555666-7",
+    "nombre": "Patricia",
+    "apellido": "Silva",
+    "edad": 38,
+    "cargo": null,
+    "correo": "patricia.silva@gmail.com",
+    "contrasena": "clienteFrecuente",
+    "empresa": "Particular",
+    "esEmpleado": false
+}
+{
+    "rut": "66777888-9",
+    "nombre": "José Miguel",
+    "apellido": "O'Reilly",
+    "edad": 29,
+    "cargo": "Especialista IT",
+    "correo": "jose.oreilly@cosanostra.com",
+    "contrasena": "p@ssw0rd!T",
+    "empresa": "Cosanostra",
+    "esEmpleado": true
+}
+{
+    "rut": "12345678-9",
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "edad": 30,
+    "cargo": "Desarrollador",
+    "correo": "juan.perez@empresa.com",
+    "contrasena": "password123",
+    "empresa": "Cosanostra",
+    "esEmpleado": true
+} 
