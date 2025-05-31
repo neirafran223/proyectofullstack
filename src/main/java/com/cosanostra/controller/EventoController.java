@@ -63,8 +63,7 @@ public class EventoController {
     }
 
     @DeleteMapping("/{id}")
-    // --- CORRECCIÓN AQUÍ: Cambiado Long a Integer ---
-    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try {
             eventoService.delate(id);
             return ResponseEntity.noContent().build();

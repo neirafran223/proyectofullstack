@@ -18,8 +18,7 @@ public class EventoService {
         return eventoRepository.findAll();
     }
 
-    // Cambiado 'long id' a 'Integer id'
-    public Evento findById(Integer id) {
+    public Evento findById(long id) {
         return eventoRepository.findById(id).get();
     }
 
@@ -27,8 +26,7 @@ public class EventoService {
         return eventoRepository.save(evento);
     }
 
-    // Cambiado 'long id' a 'Integer id'
-    public void delate(Integer id) {
+    public void delate(long id) {
         eventoRepository.deleteById(id);
     }
 }

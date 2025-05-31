@@ -11,7 +11,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne; // Necesario para las relaciones
-import jakarta.persistence.JoinColumn; // Necesario para definir las columnas de unión
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -47,15 +46,12 @@ public class Pago {
     // --- RELACIONES CON USUARIO, EVENTO Y SEGURIDAD ---
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false) // Columna FK en la tabla 'pagos'
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "evento_id", nullable = false) // Columna FK en la tabla 'pagos'
     private Evento evento;
 
     @ManyToOne
-    @JoinColumn(name = "seguridad_id", nullable = false) // Columna FK en la tabla 'pagos'
     private Seguridad seguridad;
 
     public enum EstadoPago {

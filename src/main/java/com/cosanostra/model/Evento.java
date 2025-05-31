@@ -39,15 +39,6 @@ public class Evento {
     @Column(unique = false)
     private String tipoEvento;
 
-    // Relación con Seguridad: Si un Evento tiene *una* empresa de seguridad asignada.
-    // Si una empresa de seguridad puede estar en *muchos* eventos, esto debería ser ManyToOne en Evento.
-    // Si una empresa de seguridad es *sólo para un* evento, entonces OneToOne o ManyToOne en Seguridad.
-    // Según tu Evento.java, tiene ManyToOne seguridad, lo cual implica que un evento está relacionado con UNA Seguridad.
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "seguridad_id") // Columna FK en la tabla 'evento'
+    @ManyToOne
     private Seguridad seguridad;
-
-    // Eliminar esta relación, ya que Pago es quien referencia a Evento, no al revés.
-    // @ManyToOne
-    // private Pago pago;
 }

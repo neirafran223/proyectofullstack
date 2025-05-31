@@ -43,17 +43,9 @@ public class Usuario {
     @Column(nullable = false)
     private boolean esEmpleado;
 
-    // Relaciones: Debemos tener cuidado con las relaciones bidireccionales.
-    // Si Usuario tiene Evento y Seguridad, ¿es ManyToOne o OneToMany?
-    // Asumo ManyToOne aquí, lo que significa que un usuario puede estar asociado a UN evento y UNA seguridad.
-    // Si un evento puede tener muchos usuarios, la relación OneToMany iría en Evento.
-    // Dado tu modelo actual, lo dejo como ManyToOne aquí.
-
-    @ManyToOne(fetch = FetchType.LAZY) // Lazy loading para evitar ciclos infinitos
-    @JoinColumn(name = "evento_id") // Columna FK en la tabla 'usuarios'
+    @ManyToOne
     private Evento evento;
 
-    @ManyToOne(fetch = FetchType.LAZY) // Lazy loading
-    @JoinColumn(name = "seguridad_id") // Columna FK en la tabla 'usuarios'
+    @ManyToOne
     private Seguridad seguridad;
 }
